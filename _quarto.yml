@@ -1,0 +1,58 @@
+project:
+  type: book
+  render:
+    - "*.qmd"
+    - "*.md"
+
+book:
+  title: "上市公司资本结构影响因素分析"
+  author: "曾悦晴 CHAN YUE QING"
+  date: "2026-04-24"
+  chapters:
+    - index.qmd
+    - 01-introduction.qmd
+    - 02-data.qmd
+    - 03-results.qmd
+    - 04-robustness.qmd
+    - 05-conclusion.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+website:
+  title: "上市公司资本结构影响因素分析"
+  site-url: "https://yqqq727.github.io/dshw--panel/"
+  repo-url: "https://github.com/yqqq727/dshw--panel"
+  repo-actions: [edit, issue]
+  search:
+    location: navbar
+    type: textbox
+
+format:
+  html:
+    theme:
+      - cosmo
+      - custom.scss
+    toc: true
+    toc-depth: 3
+    number-sections: true
+    code-fold: true
+    code-tools: true
+    code-link: true
+    highlight-style: github
+    css: styles.css
+
+  pdf:
+    documentclass: book
+    latex-engine: xelatex
+    toc: true
+    number-sections: true
+    colorlinks: true
+    highlight-style: github
+
+execute:
+  echo: true
+  warning: false
+  error: false
+  message: false
+  cache: true

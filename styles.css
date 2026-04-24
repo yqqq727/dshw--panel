@@ -1,0 +1,218 @@
+/* 额外的自定义样式 */
+
+/* 代码折叠按钮 details tag */
+details {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  background-color: #f8f9fa;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 500;
+  padding: 0.25rem;
+  color: #3498db;
+}
+
+details summary:hover {
+  color: #2980b9;
+}
+
+details[open] summary {
+  border-bottom: 1px solid #dee2e6;
+  margin-bottom: 0.5rem;
+}
+
+/* 页面导航 */
+.page-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.page-navigation .prev-page,
+.page-navigation .next-page {
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  color: #495057;
+}
+
+.page-navigation .prev-page:hover,
+.page-navigation .next-page:hover {
+  background-color: #e9ecef;
+  color: #212529;
+}
+
+/* 搜索框 */
+.search-input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.search-results {
+  margin-top: 1rem;
+}
+
+.search-result-item {
+  padding: 0.5rem;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.search-result-item:last-child {
+  border-bottom: none;
+}
+
+.search-result-item a {
+  color: #3498db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.search-result-item a:hover {
+  text-decoration: underline;
+}
+
+/* 目录中的章节编号 */
+.sidebar .toc .toc-section-number {
+  color: #6c757d;
+  margin-right: 0.25rem;
+}
+
+/* 表格响应式包装 */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 1rem 0;
+}
+
+/* 图片响应式 */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 公式编号 */
+.equation-number {
+  text-align: right;
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-top: 0.25rem;
+}
+
+/* 代码执行按钮 */
+.cell-execution {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-left: 0.5rem;
+}
+
+.cell-execution:hover {
+  background-color: #e9ecef;
+}
+
+/* 输出结果 */
+.cell-output {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.cell-output pre {
+  background-color: transparent;
+  border: none;
+  margin: 0;
+}
+
+/* 警告框 */
+.callout {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border-left: 4px solid;
+}
+
+.callout-info {
+  background-color: #d1ecf1;
+  border-left-color: #17a2b8;
+}
+
+.callout-warning {
+  background-color: #fff3cd;
+  border-left-color: #ffc107;
+}
+
+.callout-danger {
+  background-color: #f8d7da;
+  border-left-color: #dc3545;
+}
+
+.callout-success {
+  background-color: #d4edda;
+  border-left-color: #28a745;
+}
+
+/* 选项卡 */
+.tabset {
+  margin: 1rem 0;
+}
+
+.tabset-tab {
+  padding: 0.5rem 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-bottom: none;
+  border-radius: 0.25rem 0.25rem 0 0;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.25rem;
+}
+
+.tabset-tab.active {
+  background-color: #fff;
+  border-bottom: 1px solid #fff;
+  margin-bottom: -1px;
+}
+
+.tabset-content {
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: 0 0.25rem 0.25rem 0.25rem;
+  background-color: #fff;
+}
+
+/* 打印样式 */
+@media print {
+  .navbar,
+  .sidebar,
+  .footer,
+  .page-navigation {
+    display: none;
+  }
+
+  .main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+}
