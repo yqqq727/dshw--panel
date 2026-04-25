@@ -1,0 +1,48 @@
+name: Render Quarto Book
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 只有在推送到main时才部署
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Verify Quarto installation
+        run: |
+          quarto --version
+          quarto check install
+
+      - name: Render Quarto Book
+        run: |
+          quarto render --output-dir _book
+
+      - name: Copy to docs directory
+        run: |
+          rm -rf docs/*
+          cp -r _book/* docs/
+
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add docs/
+          git diff --staged --quiet || git commit -m "Update Quarto Book [skip ci]"
+          git push
