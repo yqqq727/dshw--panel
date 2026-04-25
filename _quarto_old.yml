@@ -1,0 +1,28 @@
+project:
+  type: book
+
+book:
+  title: "上市公司资本结构影响因素分析"
+  author: "曾悦晴"
+  chapters:
+    - index.qmd
+    - 01-introduction.qmd
+    - 02-data.qmd
+    - 03-results.qmd
+    - 04-robustness.qmd
+    - 05-conclusion.qmd
+    - references.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true
+
+execute:
+  eval: false
+  echo: false
+  warning: false
+  error: false
+  message: false
+  freeze: auto
