@@ -1,8 +1,13 @@
 # 原始数据（不上传到 GitHub）
 data/raw/
 
-# 已处理的原始数据目录
-data/processed/
+# Notebooks 会生成的临时文件
+.ipynb_checkpoints/
+.ipynb_checkpoints/*
+
+# 但保留分析结果输出
+!outputs/
+!output/
 
 # 清洗后的数据文件（Stata 格式）
 data/clean/*.dta
