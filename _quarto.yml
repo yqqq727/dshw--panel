@@ -2,10 +2,28 @@ project:
   type: book
 
 book:
-  title: "测试 Book"
+  title: "上市公司资本结构影响因素分析"
+  author: "曾悦晴"
   chapters:
-    - test.qmd
+    - index.qmd
+    - 01-introduction.qmd
+    - 02-data.qmd
+    - 03-results.qmd
+    - 04-robustness.qmd
+    - 05-conclusion.qmd
+    - references.qmd
 
 format:
   html:
     theme: cosmo
+    toc: true
+    number-sections: true
+    from: markdown+commonmark
+    code-fold: true
+
+execute:
+  freeze: true
+  eval: false
+  echo: false
+  warning: false
+  message: false
