@@ -3,6 +3,10 @@ name: Render Quarto Book
 on:
   push:
     branches: [main, master]
+    paths:
+      - '**.qmd'
+      - '**.yml'
+      - '_quarto.yml'
   workflow_dispatch:
 
 permissions:
@@ -10,7 +14,6 @@ permissions:
   pages: write
   id-token: write
 
-# 只有在推送到main时才部署
 concurrency:
   group: "pages"
   cancel-in-progress: false
@@ -19,30 +22,34 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          version: latest
 
-      - name: Verify Quarto installation
+      - name: Install Python and Jupyter
         run: |
-          quarto --version
-          quarto check install
+          python3 -m pip install --upgrade pip
+          python3 -m pip install jupyter nbformat
 
       - name: Render Quarto Book
-        run: |
-          quarto render --output-dir _book
+        run: quarto render
 
-      - name: Copy to docs directory
-        run: |
-          rm -rf docs/*
-          cp -r _book/* docs/
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_book
 
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
-          git add docs/
-          git diff --staged --quiet || git commit -m "Update Quarto Book [skip ci]"
-          git push
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
