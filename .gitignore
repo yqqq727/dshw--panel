@@ -1,6 +1,9 @@
 # 原始数据（不上传到 GitHub）
 data/raw/
 
+# 中间处理数据（不上传到 GitHub）
+data/processed/
+
 # Notebooks 会生成的临时文件
 .ipynb_checkpoints/
 .ipynb_checkpoints/*
