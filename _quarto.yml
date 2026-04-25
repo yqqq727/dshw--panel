@@ -18,3 +18,4 @@ format:
     toc: true
     number-sections: true
     highlight-style: github
+    cover-image: cover.jpg
