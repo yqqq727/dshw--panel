@@ -13,21 +13,17 @@ book:
     - 05-conclusion.qmd
     - references.qmd
 
-bibliography: references.bib
-
-website:
-  site-url: "https://yqqq727.github.io/dshw--panel/"
-
 format:
   html:
     theme: cosmo
     toc: true
     number-sections: true
+    from: markdown+commonmark
     code-fold: true
-    highlight-style: github
 
 execute:
+  freeze: true
+  eval: false
   echo: false
   warning: false
-  error: false
   message: false
