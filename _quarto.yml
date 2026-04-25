@@ -18,12 +18,13 @@ format:
     theme: cosmo
     toc: true
     number-sections: true
-    from: markdown+commonmark
     code-fold: true
+    highlight-style: github
 
 execute:
-  freeze: true
+  freeze: auto
   eval: false
   echo: false
   warning: false
+  error: false
   message: false
