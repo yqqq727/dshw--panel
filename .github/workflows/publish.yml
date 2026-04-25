@@ -24,12 +24,7 @@ jobs:
       - name: Setup Quarto
         uses: quarto-dev/quarto-actions/setup@v2
         with:
-          tinytex: true
           version: latest
-
-      - name: Install Python Dependencies
-        run: |
-          pip install jupyter pandas numpy matplotlib seaborn scipy pyfixest
 
       - name: Render Quarto Book
         run: |
