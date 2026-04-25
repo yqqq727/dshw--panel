@@ -1,9 +1,36 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "上市公司资本结构影响因素分析"
-  author: "曾悦晴"
+  reader-mode: true
+  author: "曾悦晴 CHAN YUE QING"
+  date: today
+  date-format: iso
+
+  sidebar:
+    title: "资本结构分析"
+    logo: cover.jpg
+    logo-href: https://yqqq727.github.io/dshw--panel/
+    style: floating
+    search: true
+    tools:
+      - icon: github
+        href: https://github.com/yqqq727/dshw--panel
+
+  page-footer:
+    left: |
+      <a href="https://github.com/yqqq727/dshw--panel" target="_blank">GitHub Repository</a>
+    center: |
+      Panel Data Analysis
+    right: |
+      曾悦晴 · 2026
+
+  favicon: cover.jpg
+  site-url: https://yqqq727.github.io/dshw--panel/
+  editor: source
+
   chapters:
     - index.qmd
     - 01-introduction.qmd
@@ -14,8 +41,20 @@ book:
 
 format:
   html:
-    theme: cosmo
     toc: true
+    toc-depth: 3
+    theme: cosmo
+    linestretch: 1.6
+    fontsize: 11.5pt
     number-sections: true
+    link-external-newwindow: true
+    highlight: true
     highlight-style: github
-    cover-image: cover.jpg
+    code-fold: false
+    code-line-numbers: true
+    code-overflow: wrap
+    callout-appearance: default
+    md-extensions:
+      - callout
+
+editor: visual
