@@ -19,6 +19,7 @@
 ```{python}
 #| echo: false
 #| warning: false
+#| eval: false
 import pandas as pd
 import numpy as np
 
@@ -45,6 +46,7 @@ print(f"观测数量: 144,960")
 ```{python}
 #| echo: false
 #| warning: false
+#| eval: false
 import pandas as pd
 
 # 变量定义
@@ -78,6 +80,7 @@ df_vars
 ```{python}
 #| echo: false
 #| warning: false
+#| eval: false
 import pandas as pd
 
 sample_selection = pd.DataFrame({
@@ -104,6 +107,7 @@ sample_selection
 ```{python}
 #| echo: false
 #| warning: false
+#| eval: false
 import pandas as pd
 
 # 行业分类示例
@@ -127,6 +131,7 @@ industries
 ```{python}
 #| echo: false
 #| warning: false
+#| eval: false
 import pandas as pd
 
 winsorize_effect = pd.DataFrame({
@@ -152,6 +157,7 @@ winsorize_effect
 ```{python}
 #| echo: false
 #| warning: false
+#| eval: false
 import pandas as pd
 
 desc_stats = pd.DataFrame({
@@ -169,6 +175,7 @@ desc_stats
 ```{python}
 #| echo: false
 #| warning: false
+#| eval: false
 import pandas as pd
 
 soe_comparison = pd.DataFrame({
@@ -193,6 +200,7 @@ soe_comparison
 ```{python}
 #| echo: false
 #| warning: false
+#| eval: false
 import pandas as pd
 
 corr_matrix = pd.DataFrame({
@@ -205,16 +213,17 @@ corr_matrix = pd.DataFrame({
     'SOE': [0.277, -0.079, 0.396, 0.142, -0.020, 0.080, 1.000]
 }, index=['Lev', 'NPR', 'Size', 'Tang', 'Growth', 'NDTS', 'SOE'])
 
-corr_matrix.style.format("{:.3f}")
+# Display correlation matrix
+corr_matrix.round(3)
 ```
 
 ### 核心相关系数解读
 
-**NPR 与 Lev：r = -0.340*****
+**NPR 与 Lev：r = -0.340***
 
 中等强度的负相关关系，支持优序融资理论：盈利能力越强，杠杆率越低。
 
-**Size 与 NPR：r = -0.024*****
+**Size 与 NPR：r = -0.024***
 
 虽然统计显著，但经济意义微弱。
 

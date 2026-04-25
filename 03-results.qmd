@@ -15,6 +15,7 @@ $$Lev_{it} = \alpha_i + \lambda_t + \beta NPR_{it} + \gamma X_{it} + \varepsilon
 
 ```{python}
 #| echo: false
+#| eval: false
 #| warning: false
 import pandas as pd
 
@@ -50,6 +51,7 @@ m1_results
 
 ```{python}
 #| echo: false
+#| eval: false
 #| warning: false
 import pandas as pd
 
@@ -82,6 +84,7 @@ $$Z = \frac{\beta_{SOE} - \beta_{NonSOE}}{\sqrt{SE_{SOE}^2 + SE_{NonSOE}^2}}$$
 
 ```{python}
 #| echo: false
+#| eval: false
 #| warning: false
 import pandas as pd
 
@@ -109,6 +112,7 @@ m3_results
 
 ```{python}
 #| echo: false
+#| eval: false
 #| warning: false
 import pandas as pd
 
@@ -138,6 +142,7 @@ m4_results
 
 ```{python}
 #| echo: false
+#| eval: false
 #| warning: false
 import pandas as pd
 
